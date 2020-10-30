@@ -1,0 +1,15 @@
+{
+  "name": "docker-wallabag",
+  "version": "1.0.0",
+  "description": "",
+  "main": "wallabag.spec.js",
+  "dependencies": {},
+  "devDependencies": {
+    "cypress": "^5.5.0"
+  },
+  "scripts": {
+    "test": "cypress run"
+  },
+  "author": "Aaron D Borden <adborden@a14n.net> (https://www.a14n.net/)",
+  "license": "AGPL-3.0"
+}
