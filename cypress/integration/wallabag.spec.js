@@ -32,7 +32,7 @@ describe('Wallabag routes', () => {
         expect(response.status).to.equal(302);
         expect(response.redirectedToUrl).to.equal('http://localhost:8080/login');
       });
-    })
+    });
   });
 
   describe('/login', () => {

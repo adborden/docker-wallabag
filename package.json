@@ -2,14 +2,17 @@
   "name": "docker-wallabag",
   "version": "1.0.0",
   "description": "",
-  "main": "wallabag.spec.js",
-  "dependencies": {},
+  "dependencies": {
+    "eslint": "^7.12.1"
+  },
   "devDependencies": {
     "cypress": "^5.5.0"
   },
   "scripts": {
     "test": "cypress run"
   },
+  "public": false,
   "author": "Aaron D Borden <adborden@a14n.net> (https://www.a14n.net/)",
+  "repository": "https://github.com/adborden/docker-wallabag",
   "license": "AGPL-3.0"
 }
