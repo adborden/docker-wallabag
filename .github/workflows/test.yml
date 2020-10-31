@@ -27,6 +27,7 @@ jobs:
       - test
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - name: publish
         run: |
           echo -e '${{ secrets.DOCKERHUB_PASSWORD }}' | docker login --username '${{ secrets.DOCKERHUB_USERNAME }}' --password-stdin
