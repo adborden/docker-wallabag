@@ -1,0 +1,16 @@
+---
+name: Test
+
+on: push
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: install dependencies
+        run: npm install --dev
+      - name: lint
+        run: make lint
+      - name: test
+        run: make test
