@@ -15,7 +15,7 @@ services:
       - "6379"
 
   app:
-    image: adborden/docker-wallabag:latest
+    image: adborden/wallabag:latest
     depends_on:
       - db
       - redis

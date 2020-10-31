@@ -1,4 +1,4 @@
-IMAGE := adborden/docker-wallabag
+IMAGE := adborden/wallabag
 REVISION := 1
 WALLABAG_VERSION := 2.3.8
 
