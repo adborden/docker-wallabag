@@ -45,3 +45,62 @@ Import section, enable Redis (with the value 1).
 
 
 ## Development
+
+### Prerequisites
+
+You'll need to have these tools installed.
+
+- [Docker Compose](https://docs.docker.com/compose/install/)
+- [GNU Make](https://www.gnu.org/software/make/)
+- [Node.js](https://nodejs.org/en/) 14.x
+
+
+### Setup
+
+Install test dependencies.
+
+    $  make setup
+
+Build the container.
+
+    $ make build
+
+Bring the containers up.
+
+    $ make up
+
+Open your web browser to [localhost:8080](http://localhost:8080).
+
+Create an admin user.
+
+    $ docker-compose run --rm app bin/console fos:user:create --super-admin
+
+See [Administration](#administration) for more commands.
+
+
+### Tests
+
+Run the tests.
+
+    $ make test
+
+Keep in mind that the state is stored in the Docker volumes/containers, so if
+you've created some state, it _might_ effect the tests. Run the tests with
+a clean state.
+
+    $ make clean test
+
+
+### Publish
+
+Pushes to the `main` branch will trigger the publish task.
+
+Build, tag, and publish the container image to Docker Hub.
+
+    $ make PROD=1 build publish
+
+
+### Versioning
+
+The container image is versioned based on the wallabag version plus a revision.
+You can bump the revision or the wallabag version in the `Makefile`.
