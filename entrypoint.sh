@@ -30,8 +30,8 @@ function migrate () {
     su wallabag -c "bin/console doctrine:migrations:migrate --env=prod --no-interaction"
 }
 
-wait_for redis 6379
-wait_for db 5432
+wait_for $REDIS_HOST 6379
+wait_for $DATABASE_HOST 5432
 
 case "$command" in
   start)
