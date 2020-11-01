@@ -3,24 +3,18 @@ version: "3"
 services:
   db:
     image: postgres:9.6
-    ports:
-      - "5432"
     environment:
       POSTGRES_PASSWORD: not-secret
       POSTGRES_USER: wallabag
 
   redis:
     image: redis:alpine
-    ports:
-      - "6379"
 
   app:
     image: adborden/wallabag:latest
     depends_on:
       - db
       - redis
-    ports:
-      - "9000"
     environment:
       - POSTGRES_PASSWORD=not-secret
       - POSTGRES_USER=admin

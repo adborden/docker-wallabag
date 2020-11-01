@@ -30,11 +30,13 @@ function migrate () {
     su wallabag -c "bin/console doctrine:migrations:migrate --env=prod --no-interaction"
 }
 
-wait_for $REDIS_HOST 6379
-wait_for $DATABASE_HOST 5432
 
 case "$command" in
   start)
+    # Wait for backing services
+    wait_for ${REDIS_HOST:-redis} 6379
+    wait_for ${DATABASE_HOST:-db} 5432
+
     init
     migrate
     exec /usr/sbin/php-fpm7 --fpm-config /etc/php7/php-fpm.conf --nodaemonize --force-stderr
