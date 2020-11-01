@@ -30,6 +30,16 @@ function migrate () {
     su wallabag -c "bin/console doctrine:migrations:migrate --env=prod --no-interaction"
 }
 
+function load_secrets_file() {
+  if [[ -f "$SECRETS_FILE" ]]; then
+    set -a
+    source "$SECRETS_FILE"
+    set +a
+  fi
+}
+
+# Load secrets from file
+load_secrets_file
 
 case "$command" in
   start)
