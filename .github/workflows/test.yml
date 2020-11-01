@@ -20,15 +20,8 @@ jobs:
         run: make build
       - name: test
         run: make test
-
-  publish:
-    if: ${{ github.ref == 'refs/heads/main' }}
-    needs:
-      - test
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
       - name: publish
+        if: ${{ github.ref == 'refs/heads/main' }}
         run: |
           echo -e '${{ secrets.DOCKERHUB_PASSWORD }}' | docker login --username '${{ secrets.DOCKERHUB_USERNAME }}' --password-stdin
           make publish
