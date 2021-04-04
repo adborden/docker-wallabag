@@ -1,4 +1,5 @@
-FROM alpine:3
+FROM alpine:3.12
+
 ARG wallabag_version=2.3.8
 
 RUN apk upgrade --no-cache && apk add --no-cache \
