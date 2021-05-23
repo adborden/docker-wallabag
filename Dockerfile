@@ -1,6 +1,6 @@
-FROM alpine:3.12
+FROM alpine:3.13
 
-ARG wallabag_version=2.3.8
+ARG wallabag_version=2.4.2
 
 RUN apk upgrade --no-cache && apk add --no-cache \
   composer \

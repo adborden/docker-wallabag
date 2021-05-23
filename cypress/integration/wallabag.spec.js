@@ -45,7 +45,7 @@ describe('Wallabag routes', () => {
     });
 
     it('has a login button', () => {
-      cy.contains('Login');
+      cy.contains('Log in');
     });
 
     it('does not have a register button', () => {
