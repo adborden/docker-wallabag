@@ -82,13 +82,21 @@ See [Administration](#administration) for more commands.
 
 Run the tests.
 
-    $ make test
+    $ make build test
 
 Keep in mind that the state is stored in the Docker volumes/containers, so if
 you've created some state, it _might_ effect the tests. Run the tests with
 a clean state.
 
     $ make clean test
+
+
+### Scanning
+
+CI runs weekly and on each push. The weekly scan fetches the `latest` tag in
+order to detect any new vulnerabilities since the image was published. The push
+workflow scans the image built from the branch in order to test vulnerabilities
+introduced from any changes _before_ the changes are accepted.
 
 
 ### Publish

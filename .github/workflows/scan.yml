@@ -1,11 +1,6 @@
 name: scan
 
 on:
-  push:
-    branches: [ main ]
-  pull_request:
-    # The branches below must be a subset of the branches above
-    branches: [ main ]
   schedule:
     - cron: '32 21 * * 4'
 
@@ -25,7 +20,7 @@ jobs:
         SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
       with:
         image: adborden/wallabag:latest
-        args: --file=Dockerfile
+        args: --org=adborden --file=Dockerfile
     - name: upload
       uses: github/codeql-action/upload-sarif@v1
       with:
