@@ -1,4 +1,4 @@
-FROM alpine:3.13
+FROM alpine:3.14
 
 ARG wallabag_version=2.4.2
 
