@@ -26,7 +26,7 @@ jobs:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         with:
           image: adborden/wallabag:latest
-          args: --file=Dockerfile
+          args: --org=adborden --file=Dockerfile
       - name: publish
         if: ${{ github.ref == 'refs/heads/main' }}
         run: |
