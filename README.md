@@ -82,7 +82,7 @@ See [Administration](#administration) for more commands.
 
 Run the tests.
 
-    $ make test
+    $ make build test
 
 Keep in mind that the state is stored in the Docker volumes/containers, so if
 you've created some state, it _might_ effect the tests. Run the tests with

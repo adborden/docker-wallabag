@@ -26,7 +26,7 @@ publish:
 setup:
 	npm install
 
-test: build
+test:
 	docker-compose build
 	docker-compose up -d
 	npm test
