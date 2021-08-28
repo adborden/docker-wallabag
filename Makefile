@@ -6,7 +6,7 @@ VERSION := $(WALLABAG_VERSION)-r$(REVISION)
 
 BUILD_ARGS := --build-arg wallabag_version=$(WALLABAG_VERSION) --tag $(IMAGE)
 ifdef PROD
-  BUILD_ARGS := --pull --no-cache --tag $(IMAGE):$(VERSION) $(BUILD_ARGS)
+  BUILD_ARGS := --pull --no-cache --tag $(IMAGE):latest --tag $(IMAGE):$(VERSION) $(BUILD_ARGS)
 endif
 
 
@@ -21,6 +21,7 @@ lint:
 
 publish:
 	docker push $(IMAGE):$(VERSION)
+	docker push $(IMAGE):latest
 
 setup:
 	npm install

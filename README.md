@@ -91,6 +91,14 @@ a clean state.
     $ make clean test
 
 
+### Scanning
+
+CI runs weekly and on each push. The weekly scan fetches the `latest` tag in
+order to detect any new vulnerabilities since the image was published. The push
+workflow scans the image built from the branch in order to test vulnerabilities
+introduced from any changes _before_ the changes are accepted.
+
+
 ### Publish
 
 Pushes to the `main` branch will trigger the publish task.

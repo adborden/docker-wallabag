@@ -20,6 +20,13 @@ jobs:
         run: make build
       - name: test
         run: make test
+      - name: snyk docker
+        uses: snyk/actions/docker@master
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        with:
+          image: adborden/wallabag:latest
+          args: --file=Dockerfile
       - name: publish
         if: ${{ github.ref == 'refs/heads/main' }}
         run: |
