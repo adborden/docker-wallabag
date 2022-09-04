@@ -40,3 +40,4 @@ parameters:
     redis_path: ~
     redis_password: ~
     sentry_dsn: ~
+    server_name: Your wallabag app
