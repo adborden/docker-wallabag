@@ -1,12 +1,12 @@
 IMAGE := adborden/wallabag
-REVISION := 1
+REVISION := 2
 WALLABAG_VERSION := 2.4.2
 
 VERSION := $(WALLABAG_VERSION)-r$(REVISION)
 
 BUILD_ARGS := --build-arg wallabag_version=$(WALLABAG_VERSION) --tag $(IMAGE)
 ifdef PROD
-  BUILD_ARGS := --pull --no-cache --tag $(IMAGE):latest --tag $(IMAGE):$(VERSION) $(BUILD_ARGS)
+  BUILD_ARGS := --tag $(IMAGE):latest --tag $(IMAGE):$(VERSION) $(BUILD_ARGS)
 endif
 
 
