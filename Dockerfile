@@ -46,6 +46,7 @@ COPY parameters.yml /var/www/wallabag/app/config/
 COPY php-fpm.conf /etc/php7/php-fpm.d/www.conf
 RUN \
   echo "upload_max_filesize = 1024M" >> /etc/php7/php.ini && \
+  echo "memory_limit = 1024M" >> /etc/php7/php.ini && \
   echo "post_max_size = 1024M" >> /etc/php7/php.ini
 
 COPY entrypoint.sh /usr/local/bin/
