@@ -6,10 +6,11 @@
     "eslint": "^7.32.0"
   },
   "devDependencies": {
-    "cypress": "^5.6.0"
+    "cypress": "^10.7.0"
   },
   "scripts": {
-    "test": "cypress run"
+    "test": "cypress run --e2e",
+    "dev": "cypress open --e2e"
   },
   "public": false,
   "author": "Aaron D Borden <adborden@a14n.net> (https://www.a14n.net/)",
