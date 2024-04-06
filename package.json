@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "dependencies": {
-    "eslint": "^7.32.0"
+    "eslint": "^9.0.0"
   },
   "devDependencies": {
     "cypress": "^10.7.0"
