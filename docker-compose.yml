@@ -2,7 +2,7 @@
 version: "3"
 services:
   db:
-    image: postgres:9.6
+    image: postgres:18.3
     environment:
       POSTGRES_PASSWORD: not-secret
       POSTGRES_USER: wallabag
